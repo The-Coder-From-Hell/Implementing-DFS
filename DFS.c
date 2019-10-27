@@ -83,3 +83,20 @@
         newNode->next = graph->adjLists[dest];
         graph->adjLists[dest] = newNode;
     }
+
+         
+    void printGraph(struct Graph* graph)
+    {
+        int v;
+        for (v = 0; v < graph->numVertices; v++)
+        {
+            struct node* temp = graph->adjLists[v];
+            printf("\n Adjacency list of vertex %d\n ", v);
+            while (temp)
+            {
+                printf("%d -> ", temp->vertex);
+                temp = temp->next;
+            }
+            printf("\n");
+        }
+    }
